@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductsAPI.Models;
 
 namespace ProductsAPI.Data
 {
@@ -18,5 +19,7 @@ namespace ProductsAPI.Data
 
                 optionsBuilder.UseSqlServer(configuration.GetConnectionString("ServerConnection"));
         }
+
+        public DbSet<Product> Products { get; set; }
     }
 }
